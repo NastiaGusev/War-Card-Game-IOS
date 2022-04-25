@@ -16,6 +16,10 @@ struct GameManager {
     var score2: Int = 0
     var gameOver: Bool = false
     
+    var numOfGames: Int = 0
+    var maxGames: Int = 28
+    
+    
     var winner: Int {
         if score1 > score2 {
             return 1
@@ -52,6 +56,7 @@ struct GameManager {
         if !gameOver {
             getNextCards()
             checkWinningCard()
+            numOfGames += 1
             return true
         } else {
             return false
